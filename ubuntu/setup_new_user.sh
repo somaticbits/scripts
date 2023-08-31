@@ -9,7 +9,7 @@ echo "Adding $new_username to the sudo group"
 sudo usermod -aG sudo $new_username
 
 echo "Copying SSH keys"
-sudo su - $new_username <<EOF
+sudo su - $new_username
 mkdir -p ~/.ssh
 sudo cp /root/.ssh/authorized_keys ~/.ssh/
 sudo chown $new_username:$new_username ~/.ssh/authorized_keys
