@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root."
+   echo "------ This script must be run as root."
    exit 1
 fi
 
@@ -15,14 +15,14 @@ if [ -x "$(command -v ufw)" ]; then
         ufw allow 'Nginx HTTP'
         ufw allow 'Nginx HTTPS'
         ufw reload
-        echo "UFW configuration completed."
+        echo "------ UFW configuration completed."
     else
-        echo "UFW is not active. Skipping firewall configuration."
+        echo "------ UFW is not active. Skipping firewall configuration."
     fi
 else
-    echo "UFW is not installed. Skipping firewall configuration."
+    echo "------ UFW is not installed. Skipping firewall configuration."
 fi
 
 systemctl status nginx
 
-echo "Nginx installation completed."
+echo "------ Nginx installation completed."

@@ -14,4 +14,4 @@ certbot --nginx -d "$domain"
 
 nginx -t && systemctl reload nginx
 
-echo "SSL certificate for $domain has been obtained and configured."
+echo "------ SSL certificate for $domain has been obtained and configured."

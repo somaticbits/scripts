@@ -6,7 +6,7 @@ read -p "Enter domain: " domain
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root."
+   echo "------ This script must be run as root."
    exit 1
 fi
 
@@ -31,18 +31,18 @@ ln -s "$config_file" "/etc/nginx/sites-enabled/"
 
 nginx -t && systemctl reload nginx
 
-echo "Nginx configuration for $deployment_path completed."
+echo "------ Nginx configuration for $deployment_path completed."
 
 read -p "Do you need a certificate? [YES/no]: " install_certificate
 case "$install_certificate" in
     "YES")
-        echo "Getting that sweet certificate"
+        echo "------ Getting that sweet certificate"
         source setup_certificate.sh $domain
         ;;
     "no")
-        echo "That will be all."
+        echo "------ That will be all."
         ;;
     *)
-        echo "That won't work either."
+        echo "------ That won't work either."
         ;;
 esac
