@@ -2,8 +2,8 @@
 
 echo "Updating and upgrading"
 sudo add-apt-repository ppa:ondrej/nginx
-sudo apt update
-sudo apt upgrade
+sudo apt update > /dev/null 2>&1
+sudo apt upgrade > /dev/null 2>&1
 
 echo "Adding new user"
 source setup_new_user.sh

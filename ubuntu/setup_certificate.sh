@@ -7,8 +7,8 @@ fi
 
 domain="$1"
 
-apt update
-apt install -y certbot python3-certbot-nginx
+apt update > /dev/null 2>&1
+apt install -y certbot python3-certbot-nginx > /dev/null 2>&1
 
 certbot --nginx -d "$domain"
 
