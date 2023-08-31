@@ -10,7 +10,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-config_file="/etc/nginx/sites-available/${deployment_path//\//domain}"
+config_file="/etc/nginx/sites-available/${domain}"
 
 config_content=$(cat <<EOL
 server {
@@ -46,4 +46,3 @@ case "$install_certificate" in
         echo "That won't work either."
         ;;
 esac
-;;
