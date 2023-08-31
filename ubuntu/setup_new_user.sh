@@ -2,11 +2,6 @@
 
 read -p "Enter the new username: " new_username
 
-if [ -z "$1" ]; then
-    echo "Usage: $0 <new_username>"
-    exit 1
-fi
-
 echo "Adding $new_username"
 sudo adduser $new_username
 

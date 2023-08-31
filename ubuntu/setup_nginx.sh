@@ -10,12 +10,6 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-if [ -z "$1" ]; then
-    echo "Usage: $0 <deployment_path>"
-    exit 1
-fi
-
-deployment_path="$1"
 config_file="/etc/nginx/sites-available/${deployment_path//\//domain}"
 
 config_content=$(cat <<EOL
