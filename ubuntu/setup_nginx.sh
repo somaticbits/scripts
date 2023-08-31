@@ -34,7 +34,7 @@ nginx -t && systemctl reload nginx
 echo "Nginx configuration for $deployment_path completed."
 
 read -p "Do you need a certificate? [YES/no]: " install_certificate
-case "install_certificate" in
+case "$install_certificate" in
     "YES")
         echo "Getting that sweet certificate"
         source setup_certificate.sh $domain
