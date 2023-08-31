@@ -9,12 +9,11 @@ echo "Adding $new_username to the sudo group"
 sudo usermod -aG sudo $new_username
 
 echo "Copying SSH keys"
-sudo su - $new_username
-mkdir -p ~/.ssh
-sudo cp /root/.ssh/authorized_keys ~/.ssh/
-sudo chown $new_username:$new_username ~/.ssh/authorized_keys
-sudo chmod 600 ~/.ssh/authorized_keys
-EOF
+mkdir -p /home/$new_username/.ssh
+chown $new_username:$new_username /home/$new_username/.ssh
+sudo cp /root/.ssh/authorized_keys /home/$new_username/.ssh
+chown $new_username:$new_username /home/$new_username/.ssh/authorized_keys
+chmod 600 /home/$new_username/.ssh/authorized_keys
 
 echo "Disabling password authentification"
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
