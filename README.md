@@ -14,10 +14,10 @@ And use the script you need.
     - Create a new user
     - Copy the root ssh key to new user
     - Disable password authentification on SSH
-- Add an NGINX installation (optional):
+- Add an NGINX installation (*optional*):
     - Prompt for deployment path and domain
     - Create basic NGINX conf and enable it
-    - Create certificate for domain (optional)
+    - Create certificate for domain (*optional*)
 #### Usage
 To set up your Ubuntu 22.04 server:
 1. Enter folder
