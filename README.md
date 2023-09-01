@@ -10,7 +10,7 @@ And use the script you need.
 
 ### ubuntu
 #### Steps
-- Updates and upgrades packages
+- Update and upgrade packages
 - Add a new user:
     - Create a new user
     - Copy the root ssh key to new user
